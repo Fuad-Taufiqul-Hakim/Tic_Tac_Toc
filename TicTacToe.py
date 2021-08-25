@@ -73,8 +73,13 @@ def main():
             break
 
         if not (isWinner(board, 'x')):
-            compMove()
-            printBoard()
+            move = compMove()
+            if move == 0:
+                print('Tie game!')
+            else:
+                insertLetter('o', board)
+                print("Computer placed an 'o' in position", move , ':')
+                printBoard()
         else:
             print("x\'s won this time! Good Job!")
             break
